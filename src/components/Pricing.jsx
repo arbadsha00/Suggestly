@@ -41,11 +41,11 @@ const Pricing = () => {
       <p className="md:w-3/4 mx-auto text-center my-2">
         Choose the plan that best fits your needs. Upgrade anytime!
       </p>
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto my-6">
+      <div className="grid md:grid-cols-3 gap-6  lg:gap-10 max-w-6xl mx-auto my-6">
         {pricingPlans.map((plan, index) => (
           <div
             key={index}
-            className={`card  shadow-lg rounded-lg p-6 flex flex-col items-center text-center  ${
+            className={`card   shadow-lg rounded-lg p-6 flex flex-col items-center text-center  ${
               plan.name === "Premium"
                 ? "bg-blue-50  border-blue-500"
                 : "bg-white"
