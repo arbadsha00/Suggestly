@@ -2,8 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Tooltip } from "react-tooltip";
 import { TbMenu2 } from "react-icons/tb";
+import { useContext } from "react";
+import AuthContext from "../provider/AuthContext";
 
 const Nav = () => {
+  const { user, logOut, loading } = useContext(AuthContext);
+
   const links = (
     <>
       <li>
@@ -51,12 +55,36 @@ const Nav = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="/login"
-            className="text-xl btn border-none bg-primary text-white hover:bg-secondary"
-          >
-            Login
-          </Link>
+          {!loading ? (
+            user ? (
+              <div
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={user?.displayName}
+                className="tooltip "
+              >
+                <button
+                  onClick={() => logOut()}
+                  className="text-xl btn border-none bg-primary text-slate-100 rounded-full pl-1 min-w-fit  hover:bg-secondary"
+                >
+                  <img
+                    src={user?.photoURL}
+                    className="w-[40px] h-[40px] rounded-full"
+                    alt=""
+                  />
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="text-xl btn border-none bg-primary hover:bg-secondary text-slate-100 "
+              >
+                Login
+              </Link>
+            )
+          ) : (
+            <span className="loading loading-ring loading-lg  "></span>
+          )}
 
           <div className="dropdown dropdown-left  ">
             <div
