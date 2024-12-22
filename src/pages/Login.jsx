@@ -95,7 +95,7 @@ const Login = () => {
           </div>
 
           <div className="form-control mt-2">
-            <button className="text-xl btn border-none bg-primary-gradient text-slate-100">
+            <button className="text-xl btn border-none bg-primary text-slate-100 hover:bg-secondary">
               Login
             </button>
           </div>
@@ -108,7 +108,7 @@ const Login = () => {
         </button>
         <p className="text-center text-sm py-2 text-gray-500">
           Dont’t Have An Account ?{" "}
-          <Link className="text-red-500 font-semibold" to="/register">
+          <Link className="text-primary font-semibold" to="/register">
             Register
           </Link>
         </p>
