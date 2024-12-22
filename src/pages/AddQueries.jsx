@@ -2,6 +2,7 @@ import { useContext } from "react";
 import AuthContext from "../provider/AuthContext";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const AddQueries = () => {
   const { user } = useContext(AuthContext);
@@ -16,7 +17,7 @@ const AddQueries = () => {
     const userName = user?.displayName;
     const userEmail = user?.email;
     const userImg = user?.photoURL || "";
-    const date =  new Date().toISOString();
+    const date = new Date().toISOString();
 
     const newQuery = {
       product,
@@ -31,7 +32,17 @@ const AddQueries = () => {
       recCount: Number(0),
     };
 
-    console.log(newQuery);
+    axios.post("http://localhost:3000/queries", newQuery).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          title: "Success!",
+          text: "Query added successfully",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
+        e.target.reset();
+      }
+    });
   };
   return (
     <div className="mx-auto  py-6 bg-base-200  rounded-xl flex flex-col items-center gap-6 my-6 max-w-2xl shadow-xl">
