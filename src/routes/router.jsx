@@ -5,6 +5,10 @@ import Home from "../pages/Home";
 import Queries from "../pages/Queries";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import MyQueries from "../pages/MyQueries";
+import PrivateRoute from "./PrivateRoute";
+import MyRecommendations from "../pages/MyRecommendations";
+import Recommendations from "../pages/Recommendations";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +31,18 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/myQueries",
+        element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
+      },
+      {
+        path: "/myRecommendations",
+        element: <PrivateRoute><MyRecommendations></MyRecommendations></PrivateRoute>,
+      },
+      {
+        path: "/recommendations",
+        element: <PrivateRoute><Recommendations></Recommendations></PrivateRoute>,
       },
     ],
   },

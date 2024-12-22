@@ -7,7 +7,7 @@ import AuthContext from "../provider/AuthContext";
 
 const Nav = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-
+// menu-item
   const links = (
     <>
       <li>
@@ -34,6 +34,45 @@ const Nav = () => {
           Queries
         </NavLink>
       </li>
+
+      {user && <>
+        <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? " text-white text-base font-semibold bg-secondary-2 "
+              : " text-secondary-2 text-base "
+          }
+          to="/recommendations"
+        >
+          Recommendations For Me
+        </NavLink>
+        </li>
+        <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? " text-white text-base font-semibold bg-secondary-2 "
+              : " text-secondary-2 text-base "
+          }
+          to="/myQueries"
+        >
+          My Queries
+        </NavLink>
+        </li>
+        <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? " text-white text-base font-semibold bg-secondary-2 "
+              : " text-secondary-2 text-base "
+          }
+          to="/myRecommendations"
+        >
+          My Recommendations
+        </NavLink>
+      </li>
+      </>}
     </>
   );
 
@@ -96,7 +135,7 @@ const Nav = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-md    -mr-10 dropdown-content  rounded-box z-[1] mt-14 w-60 p-4 bg-base-300  shadow"
+              className="menu menu-md    -mr-10 dropdown-content  rounded-box z-[1] mt-14 w-64 p-4 bg-base-300  shadow"
             >
               {links}
             </ul>
