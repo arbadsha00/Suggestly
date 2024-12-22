@@ -23,7 +23,7 @@ const Queries = () => {
     );
   }
   return (
-    <div className="mt-6 mb-16">
+    <div className="mt-6 mb-16 ">
       <h1 className="text-center text-primary text-4xl font-bold">
         Explore Product Queries
       </h1>

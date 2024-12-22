@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("user in the auth state changed", currentUser);
-      setUser(currentUser);
+
       if (currentUser?.email) {
         const user = { email: currentUser.email };
 
@@ -54,6 +54,8 @@ const AuthProvider = ({ children }) => {
           .post("http://localhost:3000/jwt", user, { withCredentials: true })
           .then((res) => {
             console.log("login token", res.data);
+            setUser(currentUser);
+            setLoading(false);
           });
       } else {
         axios
@@ -66,9 +68,10 @@ const AuthProvider = ({ children }) => {
           )
           .then((res) => {
             console.log("logout", res.data);
+            setUser(currentUser);
+            setLoading(false);
           });
       }
-      setLoading(false);
     });
     return () => {
       unSubscribe();

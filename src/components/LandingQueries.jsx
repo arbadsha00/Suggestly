@@ -26,7 +26,7 @@ const LandingQueries = () => {
       </p>
 
       <section className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 my-6 max-w-5xl mx-auto">
-        {data.map((item) => (
+        {data.slice(0,6).map((item) => (
           <Card {...item} key={item._id}></Card>
         ))}
       </section>

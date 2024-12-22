@@ -11,6 +11,7 @@ const Login = () => {
   const Navigate = useNavigate();
   const [email, setEmail] = useState("");
   const location = useLocation();
+  const redirectTo = location.state?.from === "/login" ? "/home" : location.state?.from || "/";
   const { signIn, setLoading, googleSignIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const Login = () => {
     signIn(email, password)
       .then(() => {
         toast.success("Login Successful");
-        Navigate(location?.state ? location.state : "/");
+        Navigate(redirectTo, { replace: true });
       })
       .catch((err) => {
         const errorMessage = err.message;
@@ -38,7 +39,7 @@ const Login = () => {
     googleSignIn()
       .then(() => {
         toast.success("Login Successful");
-        Navigate(location?.state ? location.state : "/");
+        Navigate(redirectTo, { replace: true });
       })
       .catch((err) => {
         const errorMessage = err.message;

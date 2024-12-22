@@ -20,7 +20,7 @@ const useAxiosSecure = () => {
       (error) => {
         if (error.status === 401 || error.status === 403) {
           logOut()
-            .then(() => {
+          .then(() => {
               // redirect to the login page
               navigate("/login");
             })
@@ -29,7 +29,7 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
       }
     );
-  }, []);
+  }, [logOut,navigate]);
 
   return axiosInstance;
 };
