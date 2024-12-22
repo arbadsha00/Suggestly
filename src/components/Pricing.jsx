@@ -11,7 +11,7 @@ const Pricing = () => {
     },
     {
       name: "Premium",
-      price: "$20/month",
+      price: "$9.99/month",
       description: "For the ultimate experience",
       features: [
         "Expert opinions & analysis",
@@ -23,7 +23,7 @@ const Pricing = () => {
     },
     {
       name: "Basic",
-      price: "$10/month",
+      price: "$4.99/month",
       description: "Unlimited queries and more",
       features: [
         "Unlimited product recommendations",
@@ -69,7 +69,7 @@ const Pricing = () => {
             </ul>
             <button
               className={`btn  text-white mt-6 ${
-                plan.name === "Premium" ? "bg-primary hover:bg-secondary" : "bg-secondary hover:bg-primary"
+                plan.name === "Premium" ? "bg-primary hover:bg-secondary" : "bg-secondary-2 hover:bg-primary"
               }`}
             >
               {plan.cta}

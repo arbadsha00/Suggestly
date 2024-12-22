@@ -40,7 +40,7 @@ const Reviews = () => {
       <section className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 my-6 max-w-5xl mx-auto">
         {stories.map((story) => (
             <div key={story.id} className="bg-base-200 rounded-xl clip-path-sharp-corner  shadow-lg  overflow-hidden hover:shadow-xl transition-shadow duration-300 ">
-                 <div className="flex items-center gap-3 bg-primary p-4">
+                 <div className="flex items-center gap-3 bg-secondary-2 p-4">
               <img
                 src={story.image}
                 alt={story.name}
@@ -50,7 +50,7 @@ const Reviews = () => {
                 <h3 className="text-xl font-semibold text-white ">
                   {story.name}
                 </h3>
-                <p className="text-sm text-white">{story.service}</p>
+                <p className="text-sm text-primary-2">{story.service}</p>
               </div>
             </div>
 

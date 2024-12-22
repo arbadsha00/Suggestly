@@ -5,12 +5,9 @@ import { IoIosTime } from "react-icons/io";
 import { format } from "date-fns";
 const Card = ({
   img,
-  brand,
   product,
   queryTitle,
-  reason,
   userName,
-  userImg,
   date,
   recCount,
 }) => {
@@ -29,8 +26,8 @@ const Card = ({
             <IoIosTime /> {format(date, "d-M-yy")}
           </p>
         </div>
-        <p className="text-lg font-bold text-secondary-2">{queryTitle}</p>
-        
+        <p className="text-lg font-semibold text-secondary-2">{queryTitle}</p>
+
         <div className="flex justify-between items-center w-full">
           <button className="btn btn-sm bg-primary text-white hover:bg-secondary">
             Recommend
