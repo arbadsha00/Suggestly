@@ -16,7 +16,7 @@ const Banner = () => {
     }
   };
   return (
-    <div className="container mx-auto p-4 rounded-xl relative">
+    <div className=" rounded-xl relative">
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={20}
@@ -39,20 +39,12 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <img
-              className="rounded-xl object-cover "
-              src={s2}
-              alt=""
-            />
+            <img className="rounded-xl object-cover " src={s2} alt="" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <img
-              className="rounded-xl object-cover "
-              src={s3}
-              alt=""
-            />
+            <img className="rounded-xl object-cover " src={s3} alt="" />
           </div>
         </SwiperSlide>
       </Swiper>
