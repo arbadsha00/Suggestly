@@ -15,6 +15,7 @@ import auth from "../firebase/firebase.config";
 import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -46,6 +47,27 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("user in the auth state changed", currentUser);
       setUser(currentUser);
+      if (currentUser?.email) {
+        const user = { email: currentUser.email };
+
+        axios
+          .post("http://localhost:3000/jwt", user, { withCredentials: true })
+          .then((res) => {
+            console.log("login token", res.data);
+          });
+      } else {
+        axios
+          .post(
+            "http://localhost:3000/logout",
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log("logout", res.data);
+          });
+      }
       setLoading(false);
     });
     return () => {

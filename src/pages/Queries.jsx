@@ -41,28 +41,38 @@ const Queries = () => {
         <button className="btn bg-primary text-white hover:bg-secondary">
           Search
         </button>
-          </div>
-          <div className="hidden md:flex justify-center join my-6">
+      </div>
+      <div className="hidden md:flex justify-center join my-6">
         <button
-          className={`btn btn-sm join-item ${gridCols === 1 ? "bg-primary text-white hover:bg-secondary" : ""}`}
+          className={`btn btn-sm join-item ${
+            gridCols === 1 ? "bg-primary text-white hover:bg-secondary" : ""
+          }`}
           onClick={() => setGridCols(1)}
         >
-          1 
+          1
         </button>
         <button
-          className={`btn  btn-sm  join-item ${gridCols === 2 ? "bg-primary text-white hover:bg-secondary" : ""}`}
+          className={`btn  btn-sm  join-item ${
+            gridCols === 2 ? "bg-primary text-white hover:bg-secondary" : ""
+          }`}
           onClick={() => setGridCols(2)}
         >
-          2 
+          2
         </button>
         <button
-          className={`hidden lg:flex btn btn-sm join-item ${gridCols === 3 ? "bg-primary text-white hover:bg-secondary" : ""}`}
+          className={`hidden lg:flex btn btn-sm join-item ${
+            gridCols === 3 ? "bg-primary text-white hover:bg-secondary" : ""
+          }`}
           onClick={() => setGridCols(3)}
         >
-          3 
+          3
         </button>
       </div>
-      <section className={`grid grid-cols-1 md:grid-cols-${gridCols === 3?'2':gridCols} lg:grid-cols-${gridCols} gap-6 lg:gap-10 my-10 max-w-5xl mx-auto`}>
+      <section
+        className={`grid grid-cols-1 md:grid-cols-${
+          gridCols === 3 ? "2" : gridCols
+        } lg:grid-cols-${gridCols} gap-6 lg:gap-10 my-10 max-w-5xl mx-auto`}
+      >
         {data.map((item) => (
           <Card {...item} key={item._id}></Card>
         ))}
