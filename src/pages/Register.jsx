@@ -44,7 +44,6 @@ const Register = () => {
         });
       })
       .catch((err) => {
-        setLoading(false);
         const errorMessage = err.message;
         const extractedMessage = errorMessage
           .split("(")[1]
@@ -61,7 +60,6 @@ const Register = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        setLoading(false);
         const errorMessage = err.message;
         const extractedMessage = errorMessage
           .split("(")[1]
@@ -142,20 +140,20 @@ const Register = () => {
           </div>
 
           <div className="form-control">
-            <button className="text-xl btn border-none bg-primary-gradient text-slate-100">
+            <button className="text-xl btn border-none bg-primary hover:bg-secondary text-slate-100">
               Register
             </button>
           </div>
         </form>
         <button
           onClick={handleGoogle}
-          className="mx-8 btn border-none bg-black text-slate-100"
+          className="mx-8 btn border-none bg-secondary-2 text-slate-100"
         >
           Continue with <FcGoogle /> Google
         </button>
         <p className="text-center text-sm py-2 text-gray-500">
           Already Have An Account ?
-          <Link className="text-red-500 font-semibold" to="/login">
+          <Link className="text-primary font-semibold" to="/login">
             Login
           </Link>
         </p>

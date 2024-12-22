@@ -14,7 +14,6 @@ const Login = () => {
   const { signIn, setLoading, googleSignIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
-    // console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
@@ -26,7 +25,6 @@ const Login = () => {
         Navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        setLoading(false);
         const errorMessage = err.message;
         const extractedMessage = errorMessage
           .split("(")[1]
@@ -43,7 +41,6 @@ const Login = () => {
         Navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        setLoading(false);
         const errorMessage = err.message;
         const extractedMessage = errorMessage
           .split("(")[1]
@@ -102,7 +99,7 @@ const Login = () => {
         </form>
         <button
           onClick={handleGoogle}
-          className="mx-8 btn border-none bg-black text-slate-100"
+          className="mx-8 btn border-none bg-secondary-2 text-slate-100"
         >
           Continue with <FcGoogle /> Google
         </button>
