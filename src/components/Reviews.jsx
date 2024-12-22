@@ -17,7 +17,7 @@ const Reviews = () => {
       service: "Basic Plan User",
       image: "https://i.ibb.co.com/rHcsrQg/pr2-01.png",
       story:
-        "The Basic Plan is good for individuals starting out, it’s a solid value for the price.Love the unlimited product recommendations",
+        "The Basic Plan is good for individuals starting out, it’s a solid value for the price.Love the unlimited product recommendation",
     },
     {
       id: 3,
