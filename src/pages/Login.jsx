@@ -57,7 +57,7 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-        <title>Login | EquiSports</title>
+        <title>Login | Suggestly</title>
       </Helmet>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-32">
         <h1 className="text-3xl font-semibold text-center mt-8 pb-3">

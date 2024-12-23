@@ -72,7 +72,7 @@ const Register = () => {
   return (
     <div>
       <Helmet>
-        <title>Register | EquiSports</title>
+        <title>Register | Suggestly</title>
       </Helmet>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-16">
         <h1 className="text-3xl font-semibold text-center mt-8 pb-3">

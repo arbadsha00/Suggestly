@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../components/card";
+import { Helmet } from "react-helmet-async";
 
 const Queries = () => {
   const [data, setData] = useState([]);
@@ -24,6 +25,9 @@ const Queries = () => {
   }
   return (
     <div className="mt-6 mb-16 ">
+       <Helmet>
+        <title>Queries | Suggestly</title>
+      </Helmet>
       <h1 className="text-center text-primary text-4xl font-bold">
         Explore Product Queries
       </h1>

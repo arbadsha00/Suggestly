@@ -6,7 +6,8 @@ import { format } from "date-fns";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import axios from "axios";
-
+import { Helmet } from "react-helmet-async";
+import found from "../assets/found.webp"
 const MyRecommendations = () => {
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
@@ -45,17 +46,24 @@ const MyRecommendations = () => {
     });
   };
 
-
+  if (loading) {
+    return (
+      <span className="loading loading-infinity min-h-screen loading-lg mx-auto block"></span>
+    );
+  }
 
   return (
     <div className="container mx-auto p-4">
+       <Helmet>
+              <title>MyRecommendations | Suggestly</title>
+            </Helmet>
       <h1 className="text-center text-primary text-4xl font-bold">
         My Product Recommendations
       </h1>
       <p className="md:w-3/4 mx-auto text-center my-2">
         Mange all the recommendations you’ve made
       </p>
-      <div className="overflow-x-auto my-6 max-w-4xl mx-auto">
+      {data.length ? <div className="overflow-x-auto my-6 max-w-4xl mx-auto">
         <table className="table text-xs md:text-base  table-zebra ">
           <thead className="bg-primary text-white text-base rounded-xl">
             <tr>
@@ -88,7 +96,13 @@ const MyRecommendations = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> : <div>
+          <img className="mx-auto" src={found} alt="" />
+          <h1 className="text-center  text-primary text-4xl font-bold -mt-20 mb-10">
+            No Recommendation Found!
+          </h1>
+        </div>}
+      
     </div>
   );
 };

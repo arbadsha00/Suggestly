@@ -7,6 +7,7 @@ import { IoIosTime } from "react-icons/io";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import AuthContext from "../provider/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const QueryDetails = () => {
   const [recData, setRecData] = useState([]);
@@ -71,7 +72,16 @@ const QueryDetails = () => {
     });
   };
   return (
-    <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4">
+           <Helmet>
+        <title>Details | Suggestly</title>
+      </Helmet>
+          <h1 className="text-center text-primary text-4xl font-bold ">
+        Query Details
+          </h1>
+          <p className="md:w-3/4 mx-auto text-center mt-2 mb-6">
+          Detailed Insights into the Query
+      </p>
       <div className="grid grid-cols-1 gap-6 mx-auto md:grid-cols-3 max-w-5xl">
         <div className="flex flex-col max-w-[300px] mx-auto    items-center  bg-base-100 shadow-xl  overflow-hidden">
           <figure>

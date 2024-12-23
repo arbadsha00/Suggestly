@@ -25,7 +25,7 @@ const Reviews = () => {
       service: "Premium Plan User",
       image: "https://i.ibb.co.com/jV9zMJZ/pr3-01.png",
       story:
-        "I switched to the Premium Plan for my business and it’s been amazing. The added features help streamline operations, and the customer support has been excellent. Highly recommended!",
+        "I switched to the Premium Plan for my business and it’s been amazing. The added features help streamline operations, and the customer support has been excellent.",
     },
   ];
   return (
@@ -39,22 +39,25 @@ const Reviews = () => {
       </p>
       <section className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 my-6 max-w-5xl mx-auto">
         {stories.map((story) => (
-            <div key={story.id} className="bg-base-200 rounded-xl clip-path-sharp-corner  shadow-lg  overflow-hidden hover:shadow-xl transition-shadow duration-300 ">
-                 <div className="flex items-center gap-3 bg-secondary-2 p-4">
+          <div
+            key={story.id}
+            className="bg-base-200 rounded-xl clip-path-sharp-corner  shadow-lg  overflow-hidden mx-auto hover:shadow-xl transition-shadow duration-300 max-w-[304px]"
+          >
+            <div className="flex items-center gap-3 bg-primary-2 p-4">
               <img
                 src={story.image}
                 alt={story.name}
                 className="rounded-full w-[60px] h-[60px] object-cover"
               />
               <div>
-                <h3 className="text-xl font-semibold text-white ">
-                  {story.name}
-                </h3>
-                <p className="text-sm text-primary-2">{story.service}</p>
+                <h3 className="text-xl  font-semibold ">{story.name}</h3>
+                <p className="text-sm font-bold text-primary">
+                  {story.service}
+                </p>
               </div>
             </div>
 
-            <p className="font-medium p-4 text-lg ">
+            <p className=" p-4 text-lg ">
               <FaQuoteLeft className="text-primary" />
               {story.story}
               <FaQuoteRight className="ml-auto text-primary" />

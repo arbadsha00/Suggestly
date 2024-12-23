@@ -34,7 +34,7 @@ const Pricing = () => {
     },
   ];
   return (
-    <div className="mt-16 mb-10">
+    <div className="mt-16 mb-10 max-w-5xl mx-auto">
       <h1 className="text-center text-primary text-4xl font-bold">
         Choose Your Plan
       </h1>

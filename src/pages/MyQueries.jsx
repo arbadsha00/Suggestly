@@ -13,6 +13,7 @@ import { format } from "date-fns";
 import Swal from "sweetalert2";
 import { MdDelete, MdEdit } from "react-icons/md";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 const MyQueries = () => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -50,10 +51,17 @@ const MyQueries = () => {
       }
     });
   };
+  if (loading) {
+    return (
+      <span className="loading loading-infinity min-h-screen loading-lg mx-auto block"></span>
+    );
+  }
 
-  
   return (
     <div className="container mx-auto p-4">
+       <Helmet>
+              <title>MyQuery | Suggestly</title>
+            </Helmet>
       <div className="flex flex-col items-center justify-center">
         <img src={banner} className="lg:w-3/4 mx-auto" alt="" />
         <button

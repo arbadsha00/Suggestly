@@ -4,7 +4,7 @@ body {
   font-family: "Outfit", serif;
 }
 .clip-path-sharp-corner {
-  clip-path: polygon(75% 0, 100% 29%, 100% 100%, 0 100%, 0 0);
+  clip-path: inset(0 0 0 0 round 5% 20% 5% 5%);
  
 }
 
