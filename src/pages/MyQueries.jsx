@@ -99,7 +99,7 @@ const MyQueries = () => {
                     <FaEye />
                   </button>
                   <button
-                    onClick={() => navigate(`/update/${item._id}`)}
+                    onClick={() => navigate(`/updateQueries/${item._id}`)}
                     className="btn btn-sm bg-secondary text-white hover:bg-primary"
                   >
                     <MdEdit className="text-xl" />

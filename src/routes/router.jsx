@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyRecommendations from "../pages/MyRecommendations";
 import Recommendations from "../pages/Recommendations";
 import AddQueries from "../pages/AddQueries";
+import UpdateQueries from "../pages/UpdateQueries";
 
 const router = createBrowserRouter([
   {
@@ -22,32 +23,37 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/queries",
+        path: "queries",
         element: <Queries></Queries>,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login></Login>,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register></Register>,
       },
       {
-        path: "/myQueries",
+        path: "myQueries",
         element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
       },
       {
-        path: "/myRecommendations",
+        path: "myRecommendations",
         element: <PrivateRoute><MyRecommendations></MyRecommendations></PrivateRoute>,
       },
       {
-        path: "/recommendations",
+        path: "recommendations",
         element: <PrivateRoute><Recommendations></Recommendations></PrivateRoute>,
       },
       {
-        path: "/addQueries",
+        path: "addQueries",
         element: <PrivateRoute><AddQueries></AddQueries></PrivateRoute>,
+      },
+      {
+        path: "updateQueries/:id",
+        element: <PrivateRoute><UpdateQueries></UpdateQueries></PrivateRoute>,
+       
       },
     ],
   },
