@@ -11,6 +11,7 @@ import MyRecommendations from "../pages/MyRecommendations";
 import Recommendations from "../pages/Recommendations";
 import AddQueries from "../pages/AddQueries";
 import UpdateQueries from "../pages/UpdateQueries";
+import QueryDetails from "../pages/QueryDetails";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,12 @@ const router = createBrowserRouter([
         path: "updateQueries/:id",
         element: <PrivateRoute><UpdateQueries></UpdateQueries></PrivateRoute>,
        
+      },
+      {
+        path: "queryDetails/:id",
+        element: <PrivateRoute><QueryDetails></QueryDetails></PrivateRoute>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/queries/${params.id}`),
       },
     ],
   },

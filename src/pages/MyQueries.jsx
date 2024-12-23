@@ -93,7 +93,7 @@ const MyQueries = () => {
 
                 <div className="flex justify-between items-center w-full">
                   <button
-                    onClick={() => navigate(`/details/${item._id}`)}
+                    onClick={() => navigate(`/queryDetails/${item._id}`)}
                     className="btn  btn-sm text-xl bg-primary text-white hover:bg-secondary "
                   >
                     <FaEye />

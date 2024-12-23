@@ -3,6 +3,7 @@ import React from "react";
 import { FaCommentAlt, FaUserCircle } from "react-icons/fa";
 import { IoIosTime } from "react-icons/io";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 const Card = ({
   img,
   product,
@@ -10,7 +11,10 @@ const Card = ({
   userName,
   date,
   recCount,
+  _id
 }) => {
+  const navigate = useNavigate();
+  
   return (
     <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl flex flex-col justify-between">
       <figure>
@@ -29,7 +33,7 @@ const Card = ({
         <p className="text-lg font-semibold text-secondary-2">{queryTitle}</p>
 
         <div className="flex justify-between items-center w-full">
-          <button className="btn btn-sm bg-primary text-white hover:bg-secondary">
+          <button onClick={()=>navigate(`/queryDetails/${_id}`)} className="btn btn-sm bg-primary text-white hover:bg-secondary">
             Recommend
           </button>
           <p className="flex items-center gap-1 text-secondary-2">
