@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Card from "./card";
 import axios from "axios";
-
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import exploreAnim from "../assets/Animation -explore .json"
 const LandingQueries = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,12 @@ const LandingQueries = () => {
   }
   return (
     <div id="query" className="my-10">
+      <Player
+        autoplay
+        loop
+        src={exploreAnim}
+        style={{ height: "250px", width: "250px" }}
+      ></Player>
       <h1 className="text-center text-primary text-4xl font-bold">
         Find Better Alternatives
       </h1>

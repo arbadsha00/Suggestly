@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import priceAnim from "../assets/Animation - price.json"
 const Pricing = () => {
   const pricingPlans = [
     {
@@ -25,16 +26,18 @@ const Pricing = () => {
       name: "Basic",
       price: "$4.99/month",
       description: "Unlimited queries and more",
-      features: [
-        "Unlimited recommendations",
-    
-        "Comment, add recommendations",
-      ],
+      features: ["Unlimited recommendations", "Comment, add recommendations"],
       cta: "Get Started",
     },
   ];
   return (
     <div className="mt-16 mb-10 max-w-5xl mx-auto">
+      <Player
+        autoplay
+        loop
+        src={priceAnim}
+        style={{ height: "250px", width: "250px" }}
+      ></Player>
       <h1 className="text-center text-primary text-4xl font-bold">
         Choose Your Plan
       </h1>
@@ -69,7 +72,9 @@ const Pricing = () => {
             </ul>
             <button
               className={`btn  text-white mt-6 ${
-                plan.name === "Premium" ? "bg-primary hover:bg-secondary" : "bg-secondary-2 hover:bg-primary"
+                plan.name === "Premium"
+                  ? "bg-primary hover:bg-secondary"
+                  : "bg-secondary-2 hover:bg-primary"
               }`}
             >
               {plan.cta}

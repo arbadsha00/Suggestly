@@ -103,5 +103,5 @@ A Product Recommendation platform
 - **Axios**: A promise-based HTTP client for making API requests, offering features like interceptors, automatic JSON parsing, and error handling.
 - **React Tooltip**: A library for adding tooltips to elements for displaying additional information when hovered.
 - **Date-fns**: A lightweight JavaScript library for working with dates, providing a simple and consistent API for parsing, formatting, manipulating, and comparing dates
-
+- **React Lottie**: A React wrapper for the Lottie animation library, enabling the easy integration of high-quality, lightweight animations in React applications using JSON-based animations created with Adobe After Effects.
 ---

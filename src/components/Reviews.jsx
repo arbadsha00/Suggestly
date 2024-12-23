@@ -1,6 +1,7 @@
 import React from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import chatAnim from "../assets/Animation - chat.json"
 const Reviews = () => {
   const stories = [
     {
@@ -30,6 +31,12 @@ const Reviews = () => {
   ];
   return (
     <div className="mt-16 mb-10">
+      <Player
+        autoplay
+        loop
+        src={chatAnim}
+        style={{ height: "230px", width: "230px" }}
+      ></Player>
       <h1 className="text-center text-primary text-4xl font-bold">
         What Our Users Say
       </h1>
