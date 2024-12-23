@@ -11,7 +11,8 @@ const Login = () => {
   const Navigate = useNavigate();
   const [email, setEmail] = useState("");
   const location = useLocation();
-  const redirectTo = location.state?.from === "/login" ? "/home" : location.state?.from || "/";
+  const redirectTo =
+    location.state?.from === "/login" ? "/home" : location.state?.from || "/";
   const { signIn, setLoading, googleSignIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
