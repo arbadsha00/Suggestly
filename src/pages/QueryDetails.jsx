@@ -222,10 +222,10 @@ const QueryDetails = () => {
                 </h1>
                 <div className="md:flex gap-5 text-xs text-blue-300">
                   <p className="flex items-center gap-1 ">
-                    <FaUserCircle /> {userName}
+                    <FaUserCircle /> {item.recUserName}
                   </p>
                   <p className="flex items-center gap-1 ">
-                    <IoIosTime /> {format(date, "d-M-yy")}
+                    <IoIosTime /> {format(item.recDate, "d-M-yy")}
                   </p>
                 </div>
                 <h3>{item.recTitle}</h3>
