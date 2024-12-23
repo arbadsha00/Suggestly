@@ -32,17 +32,19 @@ const AddQueries = () => {
       recCount: Number(0),
     };
 
-    axios.post("http://localhost:3000/queries", newQuery).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "Query added successfully",
-          icon: "success",
-          confirmButtonText: "Ok",
-        });
-        e.target.reset();
-      }
-    });
+    axios
+      .post("https://suggestly-server.vercel.app/queries", newQuery)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Query added successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          e.target.reset();
+        }
+      });
   };
   return (
     <div className="mx-auto  py-6 bg-base-200  rounded-xl flex flex-col items-center gap-6 my-6 max-w-2xl shadow-xl">

@@ -37,30 +37,53 @@ const router = createBrowserRouter([
       },
       {
         path: "myQueries",
-        element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyQueries></MyQueries>
+          </PrivateRoute>
+        ),
       },
       {
         path: "myRecommendations",
-        element: <PrivateRoute><MyRecommendations></MyRecommendations></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyRecommendations></MyRecommendations>
+          </PrivateRoute>
+        ),
       },
       {
         path: "recommendations",
-        element: <PrivateRoute><Recommendations></Recommendations></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Recommendations></Recommendations>
+          </PrivateRoute>
+        ),
       },
       {
         path: "addQueries",
-        element: <PrivateRoute><AddQueries></AddQueries></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddQueries></AddQueries>
+          </PrivateRoute>
+        ),
       },
       {
         path: "updateQueries/:id",
-        element: <PrivateRoute><UpdateQueries></UpdateQueries></PrivateRoute>,
-       
+        element: (
+          <PrivateRoute>
+            <UpdateQueries></UpdateQueries>
+          </PrivateRoute>
+        ),
       },
       {
         path: "queryDetails/:id",
-        element: <PrivateRoute><QueryDetails></QueryDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <QueryDetails></QueryDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/queries/${params.id}`),
+          fetch(`https://suggestly-server.vercel.app/queries/${params.id}`),
       },
     ],
   },

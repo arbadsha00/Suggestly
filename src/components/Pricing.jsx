@@ -26,9 +26,9 @@ const Pricing = () => {
       price: "$4.99/month",
       description: "Unlimited queries and more",
       features: [
-        "Unlimited product recommendations",
+        "Unlimited recommendations",
     
-        "Comment and add recommendations",
+        "Comment, add recommendations",
       ],
       cta: "Get Started",
     },

@@ -50,7 +50,7 @@ const Banner = () => {
       </Swiper>
       <div className="hidden absolute inset-0  md:flex lg:bottom-16 md:bottom-12 items-end justify-center text-center z-10  pointer-events-none">
         <button
-          onClick={() => scrollToSection("product")}
+          onClick={() => scrollToSection("query")}
           className="btn lg:text-xl btn-sm lg:btn-md  bg-primary  text-white pointer-events-auto hover:bg-secondary border-none"
         >
           <MdOutlineExplore />

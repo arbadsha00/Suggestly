@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../provider/AuthContext";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://suggestly-server.vercel.app",
   withCredentials: true,
 });
 
@@ -20,7 +20,7 @@ const useAxiosSecure = () => {
       (error) => {
         if (error.status === 401 || error.status === 403) {
           logOut()
-          .then(() => {
+            .then(() => {
               // redirect to the login page
               navigate("/login");
             })
@@ -29,7 +29,7 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
       }
     );
-  }, [logOut,navigate]);
+  }, [logOut, navigate]);
 
   return axiosInstance;
 };

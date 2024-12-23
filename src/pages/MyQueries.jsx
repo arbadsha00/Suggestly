@@ -38,16 +38,18 @@ const MyQueries = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/queries/${id}`).then((res) => {
-          if (res.data.deletedCount) {
-            Swal.fire({
-              title: "Deleted",
-              text: "Product deleted successfully",
-              icon: "success",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
+        axios
+          .delete(`https://suggestly-server.vercel.app/queries/${id}`)
+          .then((res) => {
+            if (res.data.deletedCount) {
+              Swal.fire({
+                title: "Deleted",
+                text: "Product deleted successfully",
+                icon: "success",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
       }
     });
   };
@@ -59,9 +61,9 @@ const MyQueries = () => {
 
   return (
     <div className="container mx-auto p-4">
-       <Helmet>
-              <title>MyQuery | Suggestly</title>
-            </Helmet>
+      <Helmet>
+        <title>MyQuery | Suggestly</title>
+      </Helmet>
       <div className="flex flex-col items-center justify-center">
         <img src={banner} className="lg:w-3/4 mx-auto" alt="" />
         <button

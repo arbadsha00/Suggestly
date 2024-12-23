@@ -29,7 +29,7 @@ const QueryDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/recommendations/${_id}`)
+      .get(`https://suggestly-server.vercel.app/recommendations/${_id}`)
       .then((res) => setRecData(res.data));
   }, [_id, recData]);
   const handleAddRec = (e) => {
@@ -59,28 +59,30 @@ const QueryDetails = () => {
       recDate,
     };
 
-    axios.post("http://localhost:3000/recommendations", newRec).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "Query added successfully",
-          icon: "success",
-          confirmButtonText: "Ok",
-        });
-        e.target.reset();
-      }
-    });
+    axios
+      .post("https://suggestly-server.vercel.app/recommendations", newRec)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Query added successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          e.target.reset();
+        }
+      });
   };
   return (
-      <div className="container mx-auto p-4">
-           <Helmet>
+    <div className="container mx-auto p-4">
+      <Helmet>
         <title>Details | Suggestly</title>
       </Helmet>
-          <h1 className="text-center text-primary text-4xl font-bold ">
+      <h1 className="text-center text-primary text-4xl font-bold ">
         Query Details
-          </h1>
-          <p className="md:w-3/4 mx-auto text-center mt-2 mb-6">
-          Detailed Insights into the Query
+      </h1>
+      <p className="md:w-3/4 mx-auto text-center mt-2 mb-6">
+        Detailed Insights into the Query
       </p>
       <div className="grid grid-cols-1 gap-6 mx-auto md:grid-cols-3 max-w-5xl">
         <div className="flex flex-col max-w-[300px] mx-auto    items-center  bg-base-100 shadow-xl  overflow-hidden">
@@ -204,9 +206,9 @@ const QueryDetails = () => {
           </form>
         </div>
       </div>
-      
-          <section className="space-y-3 max-w-5xl mx-auto">
-          <h1 className="font-semibold text-2xl mt-6">All Recommendations</h1>
+
+      <section className="space-y-3 max-w-5xl mx-auto">
+        <h1 className="font-semibold text-2xl mt-6">All Recommendations</h1>
         {recData.map((item) => (
           <div
             className="flex justify-between items-center  rounded-xl bg-blue-50 p-2 "
@@ -225,9 +227,9 @@ const QueryDetails = () => {
                   <p className="flex items-center gap-1 ">
                     <IoIosTime /> {format(date, "d-M-yy")}
                   </p>
-                        </div>
-                        <h3>{item.recTitle}</h3>
-                        <p className="text-xs text-gray-500">{ item.recReason}</p>
+                </div>
+                <h3>{item.recTitle}</h3>
+                <p className="text-xs text-gray-500">{item.recReason}</p>
               </div>
             </div>
             <div></div>

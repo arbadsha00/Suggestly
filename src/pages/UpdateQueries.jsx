@@ -9,11 +9,11 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 const UpdateQueries = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
-    const [singleData, setSingleData] = useState({});
-    const axiosSecure = useAxiosSecure();
+  const [singleData, setSingleData] = useState({});
+  const axiosSecure = useAxiosSecure();
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/queries/${id}`)
+      .get(`https://suggestly-server.vercel.app/queries/${id}`)
       .then((res) => setSingleData(res.data));
   }, [id, singleData]);
 
@@ -51,8 +51,8 @@ const UpdateQueries = () => {
       recCount: Number(recCount),
     };
 
-      axiosSecure.put(`queries/${id}`, newQuery).then((res) => {
-        console.log(res.data);
+    axiosSecure.put(`queries/${id}`, newQuery).then((res) => {
+      console.log(res.data);
       if (res.data.modifiedCount) {
         Swal.fire({
           title: "Success!",

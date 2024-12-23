@@ -11,7 +11,7 @@ const Queries = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/queries?search=${searchText}`)
+      .get(`https://suggestly-server.vercel.app/queries?search=${searchText}`)
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -25,7 +25,7 @@ const Queries = () => {
   }
   return (
     <div className="mt-6 mb-16 ">
-       <Helmet>
+      <Helmet>
         <title>Queries | Suggestly</title>
       </Helmet>
       <h1 className="text-center text-primary text-4xl font-bold">
