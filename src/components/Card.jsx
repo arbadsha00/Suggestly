@@ -12,11 +12,11 @@ const Card = ({
   recCount,
 }) => {
   return (
-    <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl">
+    <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl flex flex-col justify-between">
       <figure>
         <img src={img} className="w-[300px] h-[200px] object-cover" alt="" />
       </figure>
-      <div className="p-4 space-y-2 ">
+      <div className="p-4 space-y-2   ">
         <h2 className="text-2xl font-bold">{product}</h2>
         <div className="flex justify-between items-center w-full text-primary-2 text-sm">
           <p className="flex items-center gap-1 ">

@@ -66,8 +66,8 @@ const AuthProvider = ({ children }) => {
               withCredentials: true,
             }
           )
-          .then((res) => {
-            console.log("logout", res.data);
+          .then(() => {
+            // console.log("logout", res.data);
             setUser(currentUser);
             setLoading(false);
           });
