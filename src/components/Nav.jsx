@@ -7,14 +7,14 @@ import AuthContext from "../provider/AuthContext";
 
 const Nav = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-// menu-item
+  // menu-item
   const links = (
     <>
       <li>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? " text-white text-base font-semibold bg-secondary-2 "
+              ? "  text-base font-semibold  border-b-4 border-primary rounded-none "
               : " text-secondary-2 text-base"
           }
           to="/"
@@ -26,7 +26,7 @@ const Nav = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? " text-white text-base font-semibold bg-secondary-2 "
+              ? " text-base font-semibold  border-b-4 border-primary rounded-none "
               : " text-secondary-2 text-base "
           }
           to="/queries"
@@ -35,44 +35,46 @@ const Nav = () => {
         </NavLink>
       </li>
 
-      {user && <>
-        <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? " text-white text-base font-semibold bg-secondary-2 "
-              : " text-secondary-2 text-base "
-          }
-          to="/recommendations"
-        >
-          Recommendations For Me
-        </NavLink>
-        </li>
-        <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? " text-white text-base font-semibold bg-secondary-2 "
-              : " text-secondary-2 text-base "
-          }
-          to="/myQueries"
-        >
-          My Queries
-        </NavLink>
-        </li>
-        <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? " text-white text-base font-semibold bg-secondary-2 "
-              : " text-secondary-2 text-base "
-          }
-          to="/myRecommendations"
-        >
-          My Recommendations
-        </NavLink>
-      </li>
-      </>}
+      {user && (
+        <>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-base font-semibold  border-b-4 border-primary rounded-none "
+                  : " text-secondary-2 text-base "
+              }
+              to="/recommendations"
+            >
+              Recommendations For Me
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? " text-base font-semibold  border-b-4 border-primary rounded-none "
+                  : " text-secondary-2 text-base "
+              }
+              to="/myQueries"
+            >
+              My Queries
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? " text-base font-semibold  border-b-4 border-primary rounded-none "
+                  : " text-secondary-2 text-base "
+              }
+              to="/myRecommendations"
+            >
+              My Recommendations
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
