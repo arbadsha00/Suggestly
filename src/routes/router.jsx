@@ -12,6 +12,7 @@ import Recommendations from "../pages/Recommendations";
 import AddQueries from "../pages/AddQueries";
 import UpdateQueries from "../pages/UpdateQueries";
 import QueryDetails from "../pages/QueryDetails";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "queries",
         element: <Queries></Queries>,
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
       },
       {
         path: "login",
