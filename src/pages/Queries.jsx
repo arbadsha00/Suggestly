@@ -2,13 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../components/card";
 import { Helmet } from "react-helmet-async";
-
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 const Queries = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [gridCols, setGridCols] = useState(3);
-
+  const [sortOrder, setSortOrder] = useState("desc");
+  const handleSort = () => {
+    setData([...data].reverse()); // Simply reverse the array
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+  };
   useEffect(() => {
     axios
       .get(`https://suggestly-server.vercel.app/queries?search=${searchText}`)
@@ -72,6 +76,12 @@ const Queries = () => {
           3
         </button>
       </div>
+      <button
+        className="btn btn-sm bg-primary text-white mx-auto block flex"
+        onClick={handleSort}
+      >
+        Sort by Date {sortOrder === "asc" ? <FaChevronDown /> : <FaChevronUp />}
+      </button>
       <section
         className={`grid grid-cols-1 md:grid-cols-${
           gridCols === 3 ? "2" : gridCols
