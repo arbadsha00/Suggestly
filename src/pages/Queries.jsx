@@ -77,7 +77,7 @@ const Queries = () => {
         </button>
       </div>
       <button
-        className="btn btn-sm bg-primary text-white mx-auto block flex"
+        className="btn btn-sm bg-secondary-2 text-white mx-auto block flex"
         onClick={handleSort}
       >
         Sort by Date {sortOrder === "asc" ? <FaChevronDown /> : <FaChevronUp />}

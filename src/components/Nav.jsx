@@ -96,12 +96,12 @@ const Nav = () => {
 
       <div className="navbar flex justify-between">
         <div className="navbar-start">
-          <div className="flex gap-2 items-center ">
+          <Link to="/" className="flex gap-2 items-center ">
             <img src={logo} alt="" />
             <span className="text-2xl font-bold hidden md:flex ">
               Suggestly
             </span>
-          </div>
+          </Link>
         </div>
 
         <div className="navbar-center  hidden lg:flex">
