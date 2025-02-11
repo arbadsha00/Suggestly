@@ -1,6 +1,7 @@
 import React from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import priceAnim from "../assets/Animation - price.json"
+import { toast } from "react-toastify";
 const Pricing = () => {
   const pricingPlans = [
     {
@@ -70,7 +71,7 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            <button
+            <button onClick={()=>{toast("Feature under development!");}}
               className={`btn  text-white mt-6 ${
                 plan.name === "Premium"
                   ? "bg-primary hover:bg-secondary"

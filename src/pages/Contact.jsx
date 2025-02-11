@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   return (
@@ -14,12 +15,13 @@ const Contact = () => {
         feedback.
       </p>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-16 ">
-      
-       
-              <form onSubmit={(e) => {
-                  e.preventDefault();
-                  e.target.reset();
-               }} className="card-body p-4">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            e.target.reset();
+          }}
+          className="card-body p-4"
+        >
           <div className="form-control">
             <label className="label">
               <span className="label-text font-semibold">Email</span>
@@ -42,7 +44,12 @@ const Contact = () => {
           ></textarea>
 
           <div className="form-control mt-2">
-            <button className="text-xl btn border-none bg-primary text-slate-100 hover:bg-secondary ">
+            <button
+              onClick={() => {
+                toast("Thank You For Your Message");
+              }}
+              className="text-xl btn border-none bg-primary text-slate-100 hover:bg-secondary "
+            >
               Submit
             </button>
           </div>

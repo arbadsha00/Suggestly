@@ -5,6 +5,7 @@ import { IoIosTime } from "react-icons/io";
 import n1 from "../assets/n1-01.png";
 import n2 from "../assets/n2-01.png";
 import n3 from "../assets/n3-01.png";
+import { toast } from "react-toastify";
 const NewsLetter = () => {
   return (
     <div className="my-10">
@@ -42,7 +43,12 @@ const NewsLetter = () => {
             </p>
 
             <div className="flex justify-between items-center w-full">
-              <button className="btn-outline btn btn-sm border-primary text-primary border-2">
+              <button
+                onClick={() => {
+                  toast("Feature under development!");
+                }}
+                className="btn-outline btn btn-sm border-primary text-primary border-2"
+              >
                 Learn More
               </button>
             </div>
@@ -70,7 +76,12 @@ const NewsLetter = () => {
             </p>
 
             <div className="flex justify-between items-center w-full">
-              <button className="btn-outline btn btn-sm border-primary text-primary border-2">
+              <button
+                onClick={() => {
+                  toast("Feature under development!");
+                }}
+                className="btn-outline btn btn-sm border-primary text-primary border-2"
+              >
                 Learn More
               </button>
             </div>
@@ -98,7 +109,12 @@ const NewsLetter = () => {
             </p>
 
             <div className="flex justify-between items-center w-full">
-              <button className="btn-outline btn btn-sm border-primary text-primary border-2">
+              <button
+                onClick={() => {
+                  toast("Feature under development!");
+                }}
+                className="btn-outline btn btn-sm border-primary text-primary border-2"
+              >
                 Learn More
               </button>
             </div>
