@@ -22,7 +22,7 @@ const NewsLetter = () => {
         Stay informed with trends, tips, and exclusive content.
       </p>
       <section className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 my-6 max-w-5xl mx-auto">
-        <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl flex flex-col justify-between">
+        <div className="card mx-auto card-compact bg-white w-[300px] shadow-xl flex flex-col justify-between">
           <figure>
             <img src={n1} className="w-[300px] h-[200px] object-cover" alt="" />
           </figure>
@@ -37,7 +37,7 @@ const NewsLetter = () => {
             </div>
             <h2 className="text-2xl font-bold">Exclusive Product Updates</h2>
 
-            <p className=" text-secondary-2">
+            <p className=" text-secondary-2 ">
               Stay ahead of the curve with the latest product releases,
               upgrades, and innovations. Explore new features and enhancements!
             </p>
@@ -54,7 +54,7 @@ const NewsLetter = () => {
             </div>
           </div>
         </div>
-        <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl flex flex-col justify-between">
+        <div className="card mx-auto card-compact bg-white w-[300px] shadow-xl flex flex-col justify-between">
           <figure>
             <img src={n2} className="w-[300px] h-[200px] object-cover" alt="" />
           </figure>
@@ -69,7 +69,7 @@ const NewsLetter = () => {
             </div>
             <h2 className="text-2xl font-bold">Special Offers & Discounts</h2>
 
-            <p className=" text-secondary-2">
+            <p className=" text-secondary-2 ">
               Get access to exclusive deals, limited-time promotions, and
               subscriber-only discounts on our products. Don't miss out on great
               savings!
@@ -87,7 +87,7 @@ const NewsLetter = () => {
             </div>
           </div>
         </div>
-        <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl flex flex-col justify-between">
+        <div className="card mx-auto card-compact bg-white w-[300px] shadow-xl flex flex-col justify-between">
           <figure>
             <img src={n3} className="w-[300px] h-[200px] object-cover" alt="" />
           </figure>
@@ -102,7 +102,7 @@ const NewsLetter = () => {
             </div>
             <h2 className="text-2xl font-bold">Expert Tips & Insights</h2>
 
-            <p className=" text-secondary-2">
+            <p className=" text-secondary-2 ">
               Learn how to make the most of our products with expert
               guides,knowledge, best practices, and insider knowledge tailored
               just for you.

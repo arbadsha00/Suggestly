@@ -3,7 +3,7 @@ import logo from "../assets/logo-w.png";
 import { FaSquareXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-primary text-primary-content  p-10">
+    <footer className="footer footer-center bg-primary text-white  p-10">
       <aside>
         <img src={logo} alt="" />
         <p className="font-bold text-xl">Suggestly</p>

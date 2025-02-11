@@ -57,8 +57,8 @@ const Reviews = () => {
                 className="rounded-full w-[60px] h-[60px] object-cover"
               />
               <div>
-                <h3 className="text-xl  font-semibold ">{story.name}</h3>
-                <p className="text-sm font-bold text-primary">
+                <h3 className="text-xl text-black font-semibold ">{story.name}</h3>
+                <p className="text-sm font-bold text-primary ">
                   {story.service}
                 </p>
               </div>

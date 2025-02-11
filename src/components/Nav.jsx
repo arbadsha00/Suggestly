@@ -15,7 +15,7 @@ const Nav = () => {
           className={({ isActive }) =>
             isActive
               ? "  text-base font-semibold  border-b-4 border-primary rounded-none "
-              : " text-secondary-2 text-base"
+              : " text-secondary-2 text-base "
           }
           to="/"
         >

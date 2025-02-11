@@ -16,7 +16,7 @@ const Card = ({
   const navigate = useNavigate();
   
   return (
-    <div className="card mx-auto card-compact bg-base-100 w-[300px] shadow-xl flex flex-col justify-between">
+    <div className="card mx-auto card-compact bg-white w-[300px] shadow-xl flex flex-col justify-between">
       <figure>
         <img src={img} className="w-[300px] h-[200px] object-cover" alt="" />
       </figure>
@@ -30,13 +30,13 @@ const Card = ({
             <IoIosTime /> {format(date, "d-M-yy")}
           </p>
         </div>
-        <p className="text-lg font-semibold text-secondary-2">{queryTitle}</p>
+        <p className="text-lg font-semibold text-secondary-2 ">{queryTitle}</p>
 
         <div className="flex justify-between items-center w-full">
           <button onClick={()=>navigate(`/queryDetails/${_id}`)} className="btn btn-sm bg-primary text-white hover:bg-secondary">
             Recommend
           </button>
-          <p className="flex items-center gap-1 text-secondary-2">
+          <p className="flex items-center gap-1 text-secondary-2 ">
             <FaCommentAlt /> {recCount}
           </p>
         </div>
